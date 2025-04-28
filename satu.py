@@ -1,3 +1,19 @@
+import os
+
+# Bagian tambahan: Membuat requirements.txt kalau belum ada
+if not os.path.exists('requirements.txt'):
+    requirements = [
+        "streamlit",
+        "numpy",
+        "pandas",
+        "matplotlib"
+    ]
+    with open('requirements.txt', 'w') as f:
+        for package in requirements:
+            f.write(package + '\n')
+    print("✅ File requirements.txt berhasil dibuat!")
+
+# --- Mulai coding asli kamu ---
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -145,3 +161,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
